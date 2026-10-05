@@ -8,7 +8,7 @@ var rule = {
     homeUrl: '/',
     url: '/vodtype/fyclass-fypage.html',
     searchUrl: '/vodsearch/-------------.html?wd=**',
-    searchable: 0,            // 站点搜索有滑块验证码，关闭
+    searchable: 0,
     quickSearch: 0,
     filterable: 0,
     headers: { 'User-Agent': 'MOBILE_UA' },
