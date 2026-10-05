@@ -25,7 +25,8 @@ function init(extend) {
 }
 
 function parseVodCard($, item) {
-    let a = item.find("a").first();
+    // item 是 .vod-card 元素, 其父元素是 <a href="/detail/xxx.html">
+    let a = item.parent();
     let detailUrl = a.attr("href") || "";
     let m = detailUrl.match(/\/detail\/(\d+)\.html/);
     if (!m) return null;
@@ -52,8 +53,7 @@ function home(filter) {
     let $ = pyquery(html);
     let list = [];
     $(".vod-card").each(function () {
-        let item = $(this).parent();
-        let vod = parseVodCard($, item);
+        let vod = parseVodCard($, $(this));
         if (vod && vod.vod_name) list.push(vod);
     });
     return JSON.stringify({"class": classes, "list": list});
@@ -70,8 +70,7 @@ function category(tid, pg, filter, extend) {
     let $ = pyquery(html);
     let list = [];
     $(".vod-card").each(function () {
-        let item = $(this).parent();
-        let vod = parseVodCard($, item);
+        let vod = parseVodCard($, $(this));
         if (vod && vod.vod_name) list.push(vod);
     });
     return JSON.stringify({"page": parseInt(pg), "pagecount": 9999, "limit": 12, "total": 99999, "list": list});
@@ -114,15 +113,15 @@ function detail(ids) {
     });
     // 简介
     vod.vod_content = $(".detail-desc, .detail-intro, .detail-content").first().text().trim() || $("meta[name='description']").attr("content") || "";
-    // 播放源
+    // 播放源: source-panel 用 id 标识, source-tab 的 data-target 对应 id
     let playFrom = [];
     let playUrls = [];
     $(".source-panel").each(function () {
-        let sourceKey = $(this).attr("data-key") || "";
-        if (!sourceKey) return;
+        let panelId = $(this).attr("id") || "";
+        if (!panelId) return;
         // 找到对应的线路名
-        let tabBtn = $(".source-tab[data-target='" + $(this).attr("id") + "']");
-        let lineName = tabBtn.length > 0 ? tabBtn.first().text().trim() : sourceKey;
+        let tabBtn = $(".source-tab[data-target='" + panelId + "']");
+        let lineName = tabBtn.length > 0 ? tabBtn.first().text().trim() : panelId;
         playFrom.push(lineName);
         let eps = [];
         $(this).find(".episode-btn").each(function () {
@@ -145,8 +144,7 @@ function search(wd, quick, pg) {
     let $ = pyquery(html);
     let list = [];
     $(".vod-card").each(function () {
-        let item = $(this).parent();
-        let vod = parseVodCard($, item);
+        let vod = parseVodCard($, $(this));
         if (vod && vod.vod_name) list.push(vod);
     });
     return JSON.stringify({"list": list});
