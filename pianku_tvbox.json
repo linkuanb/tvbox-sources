@@ -1,26 +1,8 @@
 {
-  "spider": "https://gitee.com/zj521jj/little-tiger-spot/raw/master/drpy_libs/drpy2.min.js",
+  "spider": "https://gitee.com/zj521jj/little-tiger-spot/raw/master/jar/HubanTCR.jar",
   "sites": [
-    {
-      "key": "pianku",
-      "name": "片库",
-      "type": 3,
-      "api": "csp_Pianku",
-      "searchable": 0,
-      "quickSearch": 0,
-      "filterable": 0,
-      "ext": "https://linkuanb.github.io/tvbox-sources/pianku_drpy2.js?v=2"
-    },
-    {
-      "key": "jisuzhuiju",
-      "name": "极速追剧",
-      "type": 3,
-      "api": "csp_JisuZhuiju",
-      "searchable": 0,
-      "quickSearch": 0,
-      "filterable": 0,
-      "ext": "https://linkuanb.github.io/tvbox-sources/jisuzhuiju_drpy2.js?v=2"
-    }
+    {"key": "pianku", "name": "片库", "type": 3, "api": "csp_Pianku", "searchable": 0, "quickSearch": 0, "filterable": 0, "ext": "https://linkuanb.github.io/tvbox-sources/pianku_drpy2.js?v=2"},
+    {"key": "jisuzhuiju", "name": "极速追剧", "type": 3, "api": "csp_JisuZhuiju", "searchable": 0, "quickSearch": 0, "filterable": 0, "ext": "https://linkuanb.github.io/tvbox-sources/jisuzhuiju_drpy2.js?v=2"}
   ],
   "parses": [
     {"name": "解析1", "type": 0, "url": "https://jx.xmflv.com/?url="},
