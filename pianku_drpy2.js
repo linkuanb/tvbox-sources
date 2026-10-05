@@ -4,6 +4,56 @@
 
 const BASE_URL = "https://4k01.pianku.online";
 
+// === 自包含 req 函数 (同步 XMLHttpRequest) ===
+function req(url, options) {
+    options = options || {};
+    let xhr = new XMLHttpRequest();
+    let method = options.method || "GET";
+    xhr.open(method, url, false);
+    xhr.setRequestHeader("User-Agent", "Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 Chrome/120.0.0.0 Mobile Safari/537.36");
+    if (options.headers) {
+        for (let k in options.headers) xhr.setRequestHeader(k, options.headers[k]);
+    }
+    try { xhr.send(options.body || null); return xhr.responseText || ""; }
+    catch (e) { return ""; }
+}
+
+// === 自包含 pyquery 函数 (基于 DOMParser) ===
+function pyquery(html) {
+    let doc = new DOMParser().parseFromString(html, "text/html");
+    function make(nodes) {
+        nodes = nodes || [];
+        let obj = {
+            length: nodes.length,
+            each: function(cb) { for (let i = 0; i < nodes.length; i++) cb.call(nodes[i], i, nodes[i]); return obj; },
+            find: function(sel) {
+                let found = [];
+                for (let i = 0; i < nodes.length; i++) {
+                    let list = nodes[i].querySelectorAll(sel);
+                    for (let j = 0; j < list.length; j++) found.push(list[j]);
+                }
+                return make(found);
+            },
+            first: function() { return nodes.length > 0 ? make([nodes[0]]) : make([]); },
+            parent: function() {
+                let p = [];
+                for (let i = 0; i < nodes.length; i++) if (nodes[i].parentNode) p.push(nodes[i].parentNode);
+                return make(p);
+            },
+            text: function() { let t = ""; for (let i = 0; i < nodes.length; i++) t += nodes[i].textContent || ""; return t; },
+            attr: function(name) { return nodes.length > 0 ? (nodes[0].getAttribute(name) || "") : ""; }
+        };
+        return obj;
+    }
+    function $(selector) {
+        if (typeof selector === "string") return make(Array.from(doc.querySelectorAll(selector)));
+        if (selector instanceof Element || selector instanceof Document) return make([selector]);
+        if (Array.isArray(selector)) return make(selector);
+        return make([]);
+    }
+    return $;
+}
+
 function init(extend) {
     return JSON.stringify({
         "key": "pianku",
