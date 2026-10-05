@@ -9,7 +9,7 @@
       "searchable": 0,
       "quickSearch": 0,
       "filterable": 0,
-      "ext": "https://linkuanb.github.io/tvbox-sources/pianku_drpy2.js"
+      "ext": "https://linkuanb.github.io/tvbox-sources/pianku_drpy2.js?v=2"
     },
     {
       "key": "jisuzhuiju",
@@ -19,29 +19,14 @@
       "searchable": 0,
       "quickSearch": 0,
       "filterable": 0,
-      "ext": "https://linkuanb.github.io/tvbox-sources/jisuzhuiju_drpy2.js"
+      "ext": "https://linkuanb.github.io/tvbox-sources/jisuzhuiju_drpy2.js?v=2"
     }
   ],
   "parses": [
-    {
-      "name": "解析1",
-      "type": 0,
-      "url": "https://jx.xmflv.com/?url="
-    },
-    {
-      "name": "解析2",
-      "type": 0,
-      "url": "https://jx.playerjy.com/?url="
-    }
+    {"name": "解析1", "type": 0, "url": "https://jx.xmflv.com/?url="},
+    {"name": "解析2", "type": 0, "url": "https://jx.playerjy.com/?url="}
   ],
   "flags": ["qq", "youku", "iqiyi", "letv", "sohu", "mgtv"],
-  "ijk": [
-    {
-      "tag": "ijk",
-      "options": [
-        {"name": "ijk", "value": ""}
-      ]
-    }
-  ],
+  "ijk": [{"tag": "ijk", "options": [{"name": "ijk", "value": ""}]}],
   "ads": []
 }
