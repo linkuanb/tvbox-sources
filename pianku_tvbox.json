@@ -4,7 +4,7 @@
       "key": "pianku",
       "name": "片库",
       "type": 3,
-      "api": "csp_pianku",
+      "api": "https://gitlab.com/fantaiying/ext/-/raw/main/drpy2.min.js",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
@@ -14,7 +14,7 @@
       "key": "jisuzhuiju",
       "name": "极速追剧",
       "type": 3,
-      "api": "csp_jisuzhuiju",
+      "api": "https://gitlab.com/fantaiying/ext/-/raw/main/drpy2.min.js",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
@@ -26,11 +26,6 @@
       "name": "解析1",
       "type": 0,
       "url": "https://jx.xmflv.com/?url="
-    },
-    {
-      "name": "解析2",
-      "type": 0,
-      "url": "https://jx.playerjy.com/?url="
     }
   ],
   "flags": ["qq", "youku", "iqiyi", "letv", "sohu", "mgtv"],
