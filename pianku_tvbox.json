@@ -1,24 +1,14 @@
 {
   "sites": [
     {
-      "key": "pianku",
-      "name": "片库",
+      "key": "66 大片网",
+      "name": "66 大片网",
       "type": 3,
       "api": "https://gitlab.com/fantaiying/ext/-/raw/main/drpy2.min.js",
       "searchable": 1,
       "quickSearch": 1,
       "filterable": 1,
       "ext": "https://linkuanb.github.io/tvbox-sources/pianku_drpy2.js"
-    },
-    {
-      "key": "jisuzhuiju",
-      "name": "极速追剧",
-      "type": 3,
-      "api": "https://gitlab.com/fantaiying/ext/-/raw/main/drpy2.min.js",
-      "searchable": 1,
-      "quickSearch": 1,
-      "filterable": 1,
-      "ext": "https://linkuanb.github.io/tvbox-sources/jisuzhuiju_drpy2.js"
     }
   ],
   "parses": [
@@ -28,6 +18,13 @@
       "url": "https://jx.xmflv.com/?url="
     }
   ],
-  "flags": ["qq", "youku", "iqiyi", "letv", "sohu", "mgtv"],
+  "flags": [
+    "qq",
+    "youku",
+    "iqiyi",
+    "letv",
+    "sohu",
+    "mgtv"
+  ],
   "ads": []
 }
