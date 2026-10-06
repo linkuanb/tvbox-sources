@@ -1,6 +1,6 @@
 var rule = {
-    title: '66 大片网',
-    host: 'https://www.77dpw.vip',
+    title: '片库',
+    host: 'https://4k01.pianku.online',
     homeUrl: '/',
     url: '/vodtype/fyclass-fypage.html',
     searchable: 1,
