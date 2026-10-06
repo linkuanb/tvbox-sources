@@ -8,5 +8,6 @@ var rule = {
     class_name: '电影&动漫&剧集&短剧&综艺',
     class_url: '1&2&3&4&5',
     推荐: 'a.module-poster-item;.module-poster-item-title&&Text;.module-item-pic img&&data-original;.module-item-note&&Text;a&&href',
-    一级: 'a.module-poster-item;.module-poster-item-title&&Text;.module-item-pic img&&data-original;.module-item-note&&Text;a&&href'
+    一级: 'a.module-poster-item;.module-poster-item-title&&Text;.module-item-pic img&&data-original;.module-item-note&&Text;a&&href',
+    二级: {"title":"h1&&Text","img":".lazyload&&data-original","desc":".module-info-introduction&&Text","content":".module-info-introduction&&Text","tabs":".module-tab-item.tab-item","lists":".module-play-list a"}
 };

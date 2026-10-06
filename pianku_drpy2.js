@@ -9,5 +9,6 @@ var rule = {
     class_name: '电影&连续剧&动漫&综艺',
     class_url: '20&38&43&45',
     推荐: '.vod-item;.title&&Text;.vod-pic img&&src;.remarks&&Text;a&&href',
-    一级: '.vod-item;.title&&Text;.vod-pic img&&src;.remarks&&Text;a&&href'
+    一级: '.vod-item;.title&&Text;.vod-pic img&&src;.remarks&&Text;a&&href',
+    二级: {"title":".detail-title&&Text","desc":".detail-desc p&&Text","content":".detail-desc p&&Text","lists":".play-btn-item"}
 };
