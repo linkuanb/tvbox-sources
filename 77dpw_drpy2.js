@@ -10,11 +10,10 @@ var rule = {
     推荐: 'a.module-poster-item;.module-poster-item-title&&Text;.module-item-pic img&&data-original;.module-item-note&&Text;a&&href',
     一级: 'a.module-poster-item;.module-poster-item-title&&Text;.module-item-pic img&&data-original;.module-item-note&&Text;a&&href',
     二级: {
-        title: '.module-info-heading&&Text',
+        title: '.module-info-heading h1&&Text',
         img: '.module-item-pic img&&data-original',
-        desc: '.module-info-intro&&Text',
-        content: '.module-info-intro-content&&Text',
-        tabs: '.module-tab-item:eq(1)&&Text;.module-tab-item:eq(2)&&Text',
-        lists: '.module-play-list:eq(0) a;.module-play-list:eq(1) a'
+        desc: '.module-info-introduction-content&&Text',
+        content: '.module-info-introduction-content&&Text',
+        lists: '.module-play-list-link span&&Text;.module-play-list-link&&href'
     }
 };
